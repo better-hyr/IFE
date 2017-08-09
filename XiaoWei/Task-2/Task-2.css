@@ -1,0 +1,156 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #ccc;
+}
+/* 功能样式 */
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+/* 顶部导航 */
+header {
+	width: 100%;
+	background: rgb(51,51,51);
+}
+header img {
+	float: left;
+	margin: 10px 0px 10px 30px;
+}
+header ul {
+	float: right;
+}
+
+header ul li {
+	display: inline-block;
+	padding: 0 10px;
+}
+header ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+header ul li a:hover {
+	color: #ccc;
+}
+/* 文章 */
+article {
+	background: #fff;
+	margin: 24px 18px;
+	padding: 30px 18px;
+	box-shadow: 2px 2px 2px;
+}
+article h3 {
+	color: rgb(100,100,100);
+}
+article h4 {
+	color: rgb(190,190,190);
+}
+.first-arcticle p,
+.second-article p {
+	text-indent: 2em;
+}
+.second-article ul li {
+	list-style: none;
+}
+
+.third-article div {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin: 30px 50px;
+	border: 1px solid #ccc;
+}
+
+.fourth-article table {
+	width: 100%;
+}
+
+.fourth-article table th {
+	text-align: left;
+	background-color: rgb(51,51,51);
+	color: #fff;
+}
+.fourth-article table .sum {
+	font-weight: bold;
+	background-color: rgb(204,204,204);
+}
+.fourth-article table th,
+.fourth-article table td {
+	padding: 3px;
+}
+
+/* 侧栏 */
+aside {
+	background: #fff;
+	box-shadow: 2px 2px 2px;
+	margin: 24px 36px 24px 18px;
+}
+.aside-title {
+	position: relative;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 10px;
+}
+.aside-title::before{
+    content: "";
+    width: 3px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ccc;
+}
+.aside-title h3 {
+    margin: 10px;
+}
+
+.form-content {
+	margin: 0px 0px 0px 300px;
+	position: relative;
+}
+.form-content label {
+	float: left;
+	width: 200px;
+	text-align: right;
+	margin-right: 10px;
+}
+.email-hint {
+	color: #ccc;
+	text-indent: 13.25em;
+}
+.password-hint {
+	color: #ccc;
+	text-indent: 13.25em;
+}
+.form-content textarea {
+	vertical-align: top;
+}
+.form-submit {
+	text-align: center;
+	padding: 10px 0px 20px 0;
+}
+.form-submit button {
+	width: 95%;
+	height: 35px;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 10px;
+	background-color: rgb(51,85,218);
+}
+
+/* 底部版权信息 */
+footer {
+	width: 100%;
+	height: 80px;
+	background: #000;
+	text-align: center;
+}
+footer p {
+	color: #fff;
+	line-height: 80px;
+}

@@ -1,0 +1,158 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #ccc;
+}
+/* 功能样式 */
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+/* 顶部导航 */
+header {
+	width: 100%;
+	background: rgb(51,51,51);
+}
+header .logo {
+	float: left;
+	margin: 10px 0px 10px 30px;
+}
+header nav ul {
+	float: right;
+}
+header nav ul li {
+	float: left;
+	margin: 0 10px;
+}
+header nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+header nav ul li a:hover {
+	color: #ccc;
+	text-decoration: none;
+}
+.content {
+	padding: 20px;
+}
+/* 主体内容 */
+.main-content {
+	float: left;
+	width: calc(70% - 20px);
+}
+/* 文章 */
+article {
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px 2px;
+}
+article h3 {
+	color: rgb(100,100,100);
+}
+article h4 {
+	color: rgb(190,190,190);
+}
+.first-arcticle p,
+.second-article p {
+	text-indent: 2em;
+}
+.second-article ul li {
+	list-style: none;
+}
+.third-article {
+	overflow: auto;
+}
+.third-article div {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin: 10px;
+	border: 1px solid #ccc;
+	float: left;
+}
+
+.fourth-article table {
+	width: 100%;
+}
+
+.fourth-article table th {
+	text-align: left;
+	background-color: rgb(51,51,51);
+	color: #fff;
+}
+.fourth-article table .sum {
+	font-weight: bold;
+	background-color: rgb(204,204,204);
+}
+.fourth-article table th,
+.fourth-article table td {
+	padding: 3px;
+}
+/* 侧栏 */
+aside {
+	width: 30%;
+	float: right;
+	background: #fff;
+	box-shadow: 2px 2px 2px;
+	padding: 1em;
+	box-sizing: border-box;
+}
+/* 侧栏标题 */
+.aside-title h3 {
+	display: inline-block;
+    padding: 5px 10px;
+    border-left: 3px #ccc solid;
+    font-size: 1em;
+}
+/* 侧栏表单 */
+.form-content .line {
+	font-size: 0.8em;
+	line-height: 2em;
+	margin: 5px 0;
+}
+.form-content .prompt {
+    display: inline-block;
+    width: 30%;
+    padding-right: 3px;
+    text-align: right;
+    vertical-align: top;
+}
+.form-content .hint {
+	display: inline-block;
+    color: #ccc;
+    padding-bottom: 0.5em;
+}
+.form-content textarea {
+    font-weight: bold;
+    width: 60%;
+    font-size: 1.4em;
+}
+.submit-div {
+    text-align: center;
+}
+.submit-btn {
+    background: rgb(51,85,208);
+    color: #fff;
+    width: 95%;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px gray solid;
+}
+
+/* 底部版权信息 */
+footer {
+	width: 100%;
+	height: 80px;
+	background: #000;
+	text-align: center;
+}
+footer p {
+	color: #fff;
+	line-height: 80px;
+}

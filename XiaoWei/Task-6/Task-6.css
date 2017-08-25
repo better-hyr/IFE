@@ -1,0 +1,371 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+/* 左浮动 */
+.left {
+	float: left;
+}
+/* 右浮动 */
+.right {
+	float: right;
+}
+
+/* 总界面 */
+.wrap {
+	width: 980px;
+	height: 1386px;
+	margin: 0 auto;
+}
+
+/* 内容区 */
+.content {
+	width: 892px;
+	height: 100%;
+	margin: 0 auto; /* 居中 */
+}
+
+/* 顶部 */
+.content header {
+	width: 892px;
+	height: 61px;
+	border-bottom: 2px solid #938e9c;
+}
+.logo {
+	float: left;
+	position: relative;
+	width: 110px;
+	height: 61px;
+	background: rgb(213,93,93);
+}
+.logo p {
+	position: absolute;
+	left: 6px;
+	bottom: 4px;
+	font: 12px "黑体";
+	color: #ffffff;
+}
+.pub-time {
+	width: 110px;
+	height: 61px;
+	float: right;
+	position: relative;
+}
+.pub-time p {
+	position: absolute;
+	right: 0;
+	bottom: 4px;
+	font: 12px "黑体";
+	color: #d45d5c;
+}
+
+/* 第一个版块 */
+.first-part {
+	padding: 20px 0;
+}
+/* Part-1 图片区域 */
+.f-content-wrap .f-img {
+	position: relative;
+	width: 641px;
+	height: 301px;
+}
+.f-img .left-cover {
+	width: 191px;
+	height: 301px;
+	background-color: rgba(49,111,77,0.60);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.f-img .right-cover {
+	width: 191px;
+	height: 301px;
+	background-color: rgba(235,153,153,0.60);
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+}
+
+/* Part-1 what when how 内容区域 */
+.f-content-wrap .f-content {
+	width: 641px;
+}
+.what {
+	float: left;
+	width: 40%;
+	margin: 20px 20px 0 0;
+}
+.when {
+	float: left;
+	width: 30%;
+	margin: 20px 20px 0 0;
+}
+.how {
+	float: left;
+	margin: 20px 20px 0 0;
+}
+.title-what, .title-when, .title-how {
+	font: 16px "微软雅黑";
+	text-decoration: underline;
+	font-weight: bold;
+}
+.title-what {
+	color: #418c59;
+}
+.title-when {
+	color: #d2994f;
+}
+.title-how {
+	color: #cc7680;
+}
+.content-what, .content-when, .content-how p{
+	font: 12px "微软雅黑";
+	line-height: 16px;
+	color: #767777;
+	margin-top: 5px;
+}
+.ridio {
+	margin-top: 14px;
+}
+.ridio-item span {
+	font-family: "微软雅黑";
+	font-size: 12px;
+	line-height: 16px;
+	opacity: 0.7;
+}
+.ridio-item .r-i-title {
+	color: #231815;
+}
+.ridio-item .r-i-num {
+	color: #cd4a48;
+}
+
+/* Part-1 标题区域 */
+.f-title {
+	float: right;
+	width: 203px;
+	height: 301px;
+	border-top: 2px solid #cc8991;
+}
+/* about technologe */
+.f-t-caption {
+	font: 24px "微软雅黑";
+	color: #000000;
+	text-decoration: underline;
+	line-height: 40px;
+}
+.f-t-des {
+	font: 12px "楷体";
+	line-height: 10px;
+	color: #676767;
+}
+/* 700 */
+.f-t-main {
+	font: 116px "微软雅黑";
+	font-style: italic;
+	color: #75b86b;
+}
+/* 3.2 css */
+.f-t-s-left {
+	font: 55px "微软雅黑";
+	color: #cc8091;
+	float: left;
+	margin-top: -15px;
+}
+.f-t-s-right {
+	float:left;
+	font: 12px "微软雅黑";
+	color: #CC8091;
+	margin-top:-13px;
+}
+.f-t-s-right span {
+	display:inline-block;
+	font: 21px "微软雅黑";
+	color: #cc8091;
+	margin-top: 16px;
+}
+
+/* 第二个版块 */
+.second-part {
+	width: 415px;
+}
+/* Part-2 标题区域 */
+.s-title {
+	border-bottom: 2px solid #11456b;
+}
+.s-title .s-t-english {
+	font: 42px "黑体";
+	font-weight: bold;
+	color: #11456b;
+}
+.s-title .s-t-english span {
+	font-size: 72px;
+	font-style: italic;
+	color: #f5e327;
+}
+.s-title .s-t-chinese {
+	font: 33px "黑体";
+	font-weight: bold;
+	padding-bottom: 16px;
+	color: #11456b;
+}
+/* Part-2 内容区域 */
+.s-content {
+	margin-top: 20px;
+}
+.s-content p {
+	font: 12px "宋体";
+	line-height: 16px;
+	color: #767777;
+	text-indent: 2em;
+}
+.s-content p:nth-child(1) {
+	text-indent: 0;
+}
+.s-content p span {
+	font: 70px "微软雅黑";
+	color: #f5e327; 
+	margin: -12px 12px 0px 0px;
+}
+.s-content .s-c-img {
+	display: inline-block;
+	margin: 20px 10px 12px 20px;
+}
+
+/* 第三个版块 */
+.third-part {
+	width: 458px;
+	padding-top: 20px;
+}
+/* Part-3 图片区域 */
+.third-part .t-img {
+	position: relative;
+}
+.t-img .t-i-cover {
+	width: 458px;
+	height: 61px;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	background: #000;
+	opacity: 0.5;
+}
+.t-i-cover p {
+	font: 12px "微软雅黑";
+	font-style: italic;
+	color: #72b16a;
+	height: 44px;
+	border-left: 3px solid #72b16a;
+	letter-spacing: 140%;
+	padding-left: 10px;
+	margin-left: 40px;
+	position: absolute; /* 垂直居中 */
+	top: 50%;
+	transform: translate(0,-50%);
+}
+.t-i-cover p span {
+	font-size: 26px;
+	color: #ffffff;
+	font-style: normal;
+}
+/* Part-3 内容区域 */
+.t-content {
+	width: 459;
+	height: 318px;
+	background: rgb(238,238,214);
+	margin-top: 38px;
+}
+.t-c-log {
+	padding: 30px 20px 0 30px;
+}
+.t-c-log p {
+	font: 16px "宋体";
+	color: #5a5b5b;
+	text-align: left;
+	padding-bottom: 24px;
+}
+.t-c-log p i {
+	display: inline-block;
+	width: 10px;
+	height: 9px;
+	background: url(img/triangle.png) no-repeat 0;
+}
+
+.t-c-log .t-c-l-right {
+	font: 12px "宋体";
+	font-style: italic;
+	color: #5a5b5b;
+	text-align: right;
+}
+.t-c-title {
+	float: left;
+	background: rgb(213,93,92);
+	width: 260px;
+	height: 160px;
+	box-sizing: border-box;
+	padding: 10px 0px;
+}
+
+.t-c-title .t-c-t-num {
+	font: 110px "微软雅黑";
+	color: #ffffff;
+	
+}
+.t-c-title .t-c-t-title {
+	padding: 10px;
+	border-left: 2px solid #ffffff;
+	margin: 20px 0;
+}
+.t-c-title .t-c-t-main p {
+	font: italic 21px/24px "黑体";
+	color: #ffffff;
+}
+.t-c-title .t-c-t-sub p{
+	font: 12px "黑体";
+	color: #ffffff;	
+}
+
+.t-c-des {
+	 width: 188px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20px 0 0 15px;
+}
+.t-c-des p {
+	font: 14px "黑体";
+	font-style: italic;
+	line-height: 16px;
+	color: #5a5b5b;
+}
+.t-c-des p b {
+	font-size: 60px;
+	color: rgb(213,93,92);
+}
+.t-c-d-left {
+	font-style: normal;
+	margin: 15px 14px -20px -33px;
+}
+.t-c-d-right {
+	font-style: normal;
+	margin: 22px -22px 0 0;
+}
+/* 底部 */
+footer {
+	margin-top: 20px;
+	border-top: 1px solid #938e8c;
+}
+footer p {
+	font: 12px "黑体";
+	color: #d45d5c;
+	float: right;
+}

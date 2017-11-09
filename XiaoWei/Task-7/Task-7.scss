@@ -1,0 +1,548 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+$fixedWidth: 1280px;
+$bigFont: normal 21px "微软雅黑";
+$midFont: normal 14px "微软雅黑";
+$smallFont: normal 12px "微软雅黑";
+/* 顶部 */
+.header {
+	$headerHeight: 55px;
+	$headerDefualtColor: rgb(158, 159, 163);
+	$headerHightlightColor: #E74F4D;
+	width: $fixedWidth;
+	height: $headerHeight;
+	padding: 0px 60px;
+	box-sizing: border-box;
+	.title {
+		line-height: $headerHeight;
+		h3 {
+			display: inline-block;
+		}
+		i {
+			display: inline-block;
+			width: 31px;
+			height: 31px;
+			background: url("img/sprit.png") no-repeat 0 -46px;
+			margin: 0 10px -7px 0;
+		}
+	}
+	.nav {
+		line-height: $headerHeight;
+		ul {
+			li {
+				display: inline-block;
+				padding: 0px 10px 0px 10px;
+				margin-right: 20px;
+				cursor: pointer;
+				&:hover {
+					border-bottom: 5px solid $headerHightlightColor;
+				}
+				a {
+					text-decoration: none;
+					font: $midFont;
+					color: $headerDefualtColor;
+					&:hover {
+						color: $headerHightlightColor;
+					}
+				}
+			}
+			.login {
+				i {
+					display: inline-block;
+					width: 14px;
+					height: 17px;
+					background: url("img/sprit.png") no-repeat -40px -60px;
+					margin: 0 5px -3px 0;
+				}
+				a {
+					font: $midFont;
+					color: $headerHightlightColor;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+/* Part-1 开始体验 */
+.begin {
+	position: relative;
+	width: $fixedWidth;
+	a {
+		display: block;
+		position: absolute;
+		width: 331px;
+		height: 65px;
+		top: 435px;
+		left: 125px;
+		background-color: #E74F4D;
+		color: #fff;
+		font: normal 30px/65px "微软雅黑";
+		text-align: center;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+/* Part-2 简介 */
+.description {
+	width: $fixedWidth;
+	padding: 80px 0px;
+	box-sizing: border-box;
+	ul {
+		display: flex;
+		li {
+			flex: 1;
+			list-style: none;
+			text-align: center;
+			i {
+				display: block;
+				width: 42px;
+				height: 42px;
+				margin: 40px auto;
+			}
+			&:not(:first-child) {
+				margin-left: 50px;
+				p {
+					padding: 0 30px;
+					border-left: 3px solid #ccc;
+				}
+			}
+			&:nth-child(1) i {
+				background: url("img/sprit.png") no-repeat 0px 0px;
+			}
+			&:nth-child(2) i {
+				background: url("img/sprit.png") no-repeat -42px 0px;
+			}
+			&:nth-child(3) i {
+				background: url("img/sprit.png") no-repeat -85px 0px;
+			}
+			&:nth-child(4) i {
+				background: url("img/sprit.png") no-repeat -125px 0px;
+			}
+		}
+	}
+}
+/* Part-3 未知新世界 */
+.unknown {
+	width: $fixedWidth;
+	padding: 50px 0px;
+	background: rgb(237,237,237);
+	i {
+		display: block;
+		width: 92px;
+		height: 92px;
+		margin: 50px auto;
+		background: url("img/sprit.png") no-repeat 0 -83px;
+	}
+	h3 {
+		font: normal 54px "黑体";
+		color: rgb(160,160,160);
+		text-align: center;
+	}
+}
+/* Part-4 查找城市 */
+.choose-city {
+	$chooseCityHeight: 340px;
+	$bigFont: normal 32px "微软雅黑";
+	$textColor: #fff;
+	$selectColor: #ccc;
+	$optionColor: #323232;
+	$optionBgColor: rgb(227,227,229);
+	width: $fixedWidth;
+	height: $chooseCityHeight;
+	text-align: center;
+	position: relative;
+	background: url("img/map.png") no-repeat;
+	.c-c-cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: $fixedWidth;
+		height: $chooseCityHeight;
+		background: rgba(170, 52, 50, .2);
+	}
+	.c-c-title {
+		position: relative;
+		padding-top: 30px;
+		font: $bigFont;
+		letter-spacing: 0.1em;
+		color: $textColor;
+	}
+	.c-c-des {
+		position: relative;
+		margin-top: 15px;
+		font: $smallFont;
+		color: $textColor;
+	}
+	.c-c-form {
+		ul {
+			display: flex;
+    	margin-top: 50px;
+    	justify-content: center;
+    	list-style: none;
+    	li {
+				position: relative;
+				margin: 0 30px;
+				select {
+					width: 236px;
+					height: 36px;
+					padding: 0px 10px;
+					font-size: 12px;
+					color: $selectColor;
+    			option {
+    				background: $optionBgColor;
+    				color: $optionColor;
+    			}
+				}
+				i {
+					display: inline-block;
+					width: 19px;
+					height: 18px;
+					position: absolute;
+					right: 5px;
+					top: 8px;
+					cursor: pointer;
+					background: url("img/sprit.png") no-repeat -147px -157px;
+				}
+				button {
+					width: 236px;
+					height: 36px;
+					font: $midFont;
+					color: $textColor;
+					background: #BE4E48;
+					cursor: pointer;
+					border: none;
+				}
+			}
+		}
+	}
+}
+/* Part-5 城市活动 */
+.activity {
+	$textColor: #A8A9AA;
+	width: $fixedWidth;
+	text-align: center;
+	background: #f7f7f7;
+	padding: 80px 0px;
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		li {
+			margin-right: 40px;
+			h3 {
+				font: $midFont;
+			}
+			p {
+				font: $smallFont;
+				color: $textColor;
+			}
+			.activity-img {
+				padding: 10px;
+				border: 1px solid #ccc;
+				background-color: #fff;
+				i {
+					display: block;
+					width: 203px;
+					height: 311px;
+					box-sizing: border-box;
+					background: url("img/avtivity.png") no-repeat -10px -973px;
+				}
+			}
+		}
+		.activity-s h3 {
+			font: normal 24px "黑体";
+		}		
+	}
+	ul>li+li .activity-img i {
+		background: url("img/avtivity.png") no-repeat -10px -652px;
+	}
+	ul>li+li+li .activity-img i {
+		background: url("img/avtivity.png") no-repeat -9px -331px;
+	}
+	ul>li+li+li+li .activity-img i {
+		background: url("img/avtivity.png") no-repeat -9px -11px;
+	}
+}
+/* Part-6 新世界 */
+.new-world {
+	width: $fixedWidth;
+	background-color: #fff;
+	text-align: center;
+	display: block;
+	.content-wrap {
+		width: 429px;
+		text-align: center;
+		padding: 120px 0px;
+		.content {
+			width: 290px;
+			margin: 0 auto;
+			h3 {
+				font: normal 20px/30px "黑体";
+				margin-bottom: 20px;
+				span {
+					color: #E7504D;
+				}
+			}
+			p {
+				font: normal 12px/28px "黑体";
+				color: #999;
+				text-align: left;
+				margin-bottom: 40px;
+			}
+			a {
+				display: block;
+				margin: 0 auto;
+				width: 170px;
+				height: 45px;
+				border: 1px solid #E7504D;
+				font: $bigFont;
+				line-height: 45px;
+				color: #E7504D;
+			}
+			ul {
+				margin: 20px 0 0;
+				li {
+					display: inline-block;
+					width: 10px;
+					height: 10px;
+					border-radius: 10px;
+					border: 1px solid #999;
+					background: #999;
+					cursor: pointer;
+				}
+				&>li+li {
+					background: #fff;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+/* Part-7 新时代 */
+.new-time {
+	$hightlightColor: #E74F4D;
+	display: flex;
+	width: $fixedWidth;
+	.item {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.first-item {
+		background: $hightlightColor;
+		color: #fff;
+		p {
+			font: normal 21px/1.4em "黑体";
+		}
+		i {
+			width: 31px;
+			height: 2px;
+			background: #fff;
+			margin: 20px 0;
+		}
+		a {
+			display: block;
+			width: 170px;
+			height: 45px;
+			border: 1px solid #fff;
+			font: $bigFont;
+			line-height: 45px;
+			text-align: center;
+		}
+	}
+	.second-item {
+		@extend .first-item;
+		background-color: #fff;
+		p {
+			color: #000;
+		}
+		i {
+			background-color: #ccc;
+		}
+		a {
+			color: $hightlightColor;
+			border: 1px solid $hightlightColor;
+		}
+	}
+}
+/* Part-8 成为志愿者 */
+.volunteer {
+	width: $fixedWidth;
+	$bigFont: normal 21px "微软雅黑";
+	$midFont: normal 14px "微软雅黑";
+	$smallFont: normal 12px "微软雅黑";
+	$formColor: #EDEDEF;
+	padding: 50px 0px;
+	.title {
+		text-align: center;
+		margin-bottom: 80px;
+		h3 {
+			font: $bigFont;
+			margin-bottom: 10px;
+			span {
+				display: inline-block;
+				padding-bottom: 2px;
+				border-bottom: 2px solid #E7504D;
+			}
+		}
+		p {
+			font: $smallFont;
+			color: #999;
+		}
+	}
+	.content {
+		width: 980px;
+		margin: 0 auto;
+		.caution {
+			width: 300px;
+		}
+		.caution-item {
+			margin-bottom: 20px;
+			h3 {
+				font: $midFont;
+				color: #666;
+				text-align: left;
+				margin: 0px 0px 20px 0px;
+			}
+			p {
+				font: $smallFont;
+				color: #999;
+			}
+			span {
+				float: right;
+				font: $smallFont;
+				color: #999;
+				cursor: pointer;
+				position: relative;
+				i {
+					position: absolute;
+					height: 6px;
+					width: 10px;
+					top: 3px;
+					left: -18px;
+					background: url("img/sprit.png") no-repeat -129px -167px;
+				}
+			}
+		}
+		.info {
+			width: 640px;
+			input {
+				display: inline-block;
+				width: 287px;
+				height: 30px;
+				line-height: 30px;
+				padding: 10px;
+				border: 0;
+				margin: 0px 0px 10px 0px;
+				background-color: $formColor;
+			}
+			input:nth-child(1),
+			input:nth-child(3) {
+				margin: 0px 20px 0px 0px;
+			}
+			textarea {
+				padding: 10px 10px;
+				box-sizing: border-box;
+				width: 100%;
+				height: 100px;
+				color: #221814;
+				background: $formColor;
+				border: 0;
+				overflow: hidden;
+			}
+			button {
+				font: $midFont;
+				color: #000;
+				width: 100%;
+				height: 41px;
+				background: $formColor;
+				margin: 10px 0px 0px;
+				border: none;
+				cursor: pointer;
+			}
+
+		}
+	}
+}
+/* Part-9 联系我们 */
+.contact {
+	width: $fixedWidth;
+	background: rgb(51,54,63);
+	padding: 50px 0px;
+	.content {
+		color: #fff;
+		text-align: center;
+		width: 500px;
+		margin: 0 auto;
+		h3 {
+			font: normal 21px/34px "黑体";;
+		}
+		p {
+			font: $smallFont;
+		}
+		form {
+			height: 41px;
+			margin: 30px 0;
+			input {
+				width: 420px;
+				border: none;
+				font: $midFont;
+			}
+			button {
+				@extend input;
+				width: 80px;
+				font-size: 15px;
+				background-color: #6F7178;
+				color: #fff;
+				cursor: pointer;
+			}
+		}
+		.icons li {
+			display: inline-block;
+			width: 29px;
+			height: 25px;
+			margin: 0px 10px;
+		}
+		.icons li:nth-child(1) {
+			background: url("img/sprit.png") no-repeat -139px -97px;
+		}
+		.icons li:nth-child(2) {
+			background: url("img/sprit.png") no-repeat -135px -72px;
+		}
+		.icons li:nth-child(3) {
+			background: url("img/sprit.png") no-repeat -134px -47px;
+		}
+		.icons li:nth-child(4) {
+			background: url("img/sprit.png") no-repeat -139px -122px;
+		}
+	}
+}
+/* 底部 */
+.footer {
+	width: $fixedWidth;
+	box-sizing: border-box;
+	background: rgb(48,48,58);
+	color: #fff;
+	padding: 30px;
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+}

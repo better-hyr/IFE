@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>任务七：实现常见的技术产品官网的页面架构及样式布局</title>
+	<link rel="stylesheet" type="text/css" href="Task-7.css">
+</head>
+<body>
+<!-- 顶部 -->
+<!-- 顶部包括左边的 logo 和标题，右边的导航栏（包括登录） -->
+<header class="header clearfix" id="header">
+	<div class="left title">
+		<i></i>
+		<h3>新世界</h3>
+	</div>
+	<nav class="nav right">
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">最新活动</a></li>
+			<li><a href="#">项目介绍</a></li>
+			<li><a href="#">爱心社区</a></li>
+			<li><a href="#">关于我们</a></li>
+			<span class="login"><i></i><a href="#">登录</a></span>
+		</ul>
+	</nav>
+</header>
+
+<!-- Part-1 开始体验 -->
+<section class="begin">
+	<img src="img/begin.png">
+	<div class="begin-btn">
+		<a>开始体验</a>
+	</div>
+</section>
+
+<!-- Part-2 简介 -->
+<section class="description">
+	<ul>
+		<li>
+			<i></i>
+			<p>打造全新世界观，让你更爱你的生活</p>
+		</li>
+		<li>
+			<i></i>
+			<p>丰富多彩的公益活动，发挥新世界的主人公意识</p>
+		</li>
+		<li>
+			<i></i>
+			<p>时尚的新理念，超前体验未知的生活</p>
+		</li>
+		<li>
+			<i></i>
+			<p>完善的培养机制，培养你全新的世界观</p>
+		</li>
+	</ul>
+</section>
+
+<!-- Part-3 未知新世界 -->
+<section class="unknown">
+	<i></i>
+	<h3>关于新世界，你不知道的还有什么？</h3>
+</section>
+
+<!-- Part-4 查找城市 -->
+<section class="choose-city">
+	<div class="c-c-cover"></div>
+	<div class="c-c-title">查找新世界城市活动信息</div>
+	<div class="c-c-des">每个城市有不同的活动信息，请自主查询您所需要了解的城市</div>
+	<form  class="c-c-form">
+		<ul>
+			<li>
+				<select class="nation">
+					<option value="china" selected="selected"><i></i><a>中国</a></option>
+					<option value="usa"><i></i>美国</option>
+					<option value="uk"><i></i>英国</option>
+					<option value="japan"><i></i>日本</option>
+				</select>
+				<i></i>
+			</li>
+			<li>
+				<select class="province">
+					<option value="beijing"><i></i>北京市</option>
+					<option value="tianjin"><i></i>天津市</option>
+					<option value="shanghai"><i></i>上海市</option>
+					<option value="hebei"><i></i>河北省</option>
+					<option value="hubei" selected="selected"><i></i>湖北省</option>
+					<option value="neimenggu"><i></i>内蒙古自治区</option>
+					<<option value="guangdong"><i></i>广东省</option>
+					<option value="hunan"><i></i>湖南省</option>
+				</select>
+				<i></i>
+			</li>
+			<li>
+				<select class="cities">
+					<option value="wuhan" selected="selected"><i></i>武汉</option>
+					<option value="changsha"><i></i>长沙</option>
+					<option value="shenzhen"><i></i>深圳</option>
+					<option value="guangzhou"><i></i>广州</option>
+					<option value="hangzhou"><i></i>杭州</option>
+					<option value="beijing"><i></i>北京市</option>
+					<option value="shanghai"><i></i>上海市</option>
+				</select>
+				<i></i>
+			</li>
+			<li>
+				<button type="button">搜索</button>
+			</li>
+		</ul>
+	</form>
+</section>
+
+<!-- Part-5 城市活动 -->
+<section class="activity">
+		<ul>
+			<li>
+				<div class="activity-img"><i></i></div>
+				<h3>北京活动</h3>
+				<p>新社区大联盟</p>
+			</li>
+			<li class="activity-s">
+				<h3>上 海 活 动</h3>
+				<p>夜上海新景观探索</p>
+				<div class="activity-img"><i></i></div>
+			</li>
+			<li>
+				<div class="activity-img"><i></i></div>
+				<h3>深圳活动</h3>
+				<p>全新海岸线观点站</p>
+			</li>
+			<li class="activity-l">
+				<div class="activity-img"><i></i></div>
+				<h3>香港活动</h3>
+				<p>奢侈消费大派送</p>
+			</li>
+		</ul>
+</section>
+
+<!-- Part-6 新世界 -->
+<section class="new-world clearfix">
+	<img class="left" src="img/newWorld.jpg">
+	<div class="right content-wrap">
+		<div class="content">
+			<h3>新世界／<span>01</span></h3>
+			<p>新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界</p>
+			<a>更多详情</a>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- Part-7 新时代 -->
+<div class="new-time">
+	<div class="item first-item">
+		<p>新时代</p>
+		<p>关于爱生活的我们</p>
+		<i></i>
+		<a>查看更多</a>
+	</div>
+	<div class="item second-item">
+		<p>新时代</p>
+		<p>关于爱生活的我们</p>
+		<i></i>
+		<a>查看更多</a>
+	</div>
+	<div class="item third-item">
+		<img src="img/newTime.jpg">
+	</div>
+</div>
+
+<!-- Part-8 成为志愿者 -->
+<section class="volunteer">
+	<div class="title">
+		<h3>成为我<span>们的</span>志愿者</h3>
+		<p>新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有激情</p>
+		<p>那就不要犹豫，快来加入我们，成为改变所有人生活的人</p>
+	</div>
+	<div class="content clearfix">
+		<div class="left caution">
+			<div class="caution-item clearfix">
+				<h3>新世界志愿者协议</h3>
+				<p>加入新世界志愿者的人员必须遵守中华人民共和国的相关法律法规，并且本着平等自愿的原则......</p>
+				<span><i></i>more</span>
+			</div>
+			<div class="caution-item clearfix">
+				<h3>新世界志愿者权利</h3>
+				<p>新世界志愿者享受新世界内部所有资源共享的权利，并且享受所在城市新世界活动的有限参与资格</p>
+				<span><i></i>more</span>
+			</div>
+			<div class="caution-item clearfix">
+				<h3>更多条款</h3>
+				<span><i></i>more</span>
+			</div>
+		</div>
+		<div class="right info">
+		<form>
+			<input type="text" name="name" placeholder="姓名：">
+			<input type="text" name="age" placeholder="年龄：">
+			<input type="text" name="telephone" placeholder="联系方式：">
+			<input type="text" name="address" placeholder="联系地址：">
+			<textarea cols="50" rows="10" placeholder="请简单描述您梦想的生活："></textarea>
+			<button>提交申请</button>
+		</form>
+		</div>
+	</div>
+</section>
+
+<!-- Part-9 联系我们 -->
+<section class="contact">
+	<div class="content">
+		<h3>联系我们</h3>
+		<p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯</p>
+		<p>也可以通过以下任何方式关注我们动态</p>
+		<form class="clearfix">
+			<input type="text" class="left" name="email" placeholder="someone@email.com">
+			<button class="right">提交</button>
+		</form>
+		<ul class="icons">
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+    	</ul>
+    </div>
+</section>
+
+<!-- 底部 -->
+<!-- 顶部包括版权信息和回到顶部按钮 -->
+<footer class="footer clearfix">
+	<p class="left">@2016新世界</p>
+	<a class="right" href="#header">Back to top</a>
+</footer>
+</body>
+</html>

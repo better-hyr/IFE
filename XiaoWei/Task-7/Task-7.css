@@ -1,0 +1,439 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+/* 顶部 */
+.header {
+  width: 1280px;
+  height: 55px;
+  padding: 0px 60px;
+  box-sizing: border-box; }
+  .header .title {
+    line-height: 55px; }
+    .header .title h3 {
+      display: inline-block; }
+    .header .title i {
+      display: inline-block;
+      width: 31px;
+      height: 31px;
+      background: url("img/sprit.png") no-repeat 0 -46px;
+      margin: 0 10px -7px 0; }
+  .header .nav {
+    line-height: 55px; }
+    .header .nav ul li {
+      display: inline-block;
+      padding: 0px 10px 0px 10px;
+      margin-right: 20px;
+      cursor: pointer; }
+      .header .nav ul li:hover {
+        border-bottom: 5px solid #E74F4D; }
+      .header .nav ul li a {
+        text-decoration: none;
+        font: normal 14px "微软雅黑";
+        color: #9e9fa3; }
+        .header .nav ul li a:hover {
+          color: #E74F4D; }
+    .header .nav ul .login i {
+      display: inline-block;
+      width: 14px;
+      height: 17px;
+      background: url("img/sprit.png") no-repeat -40px -60px;
+      margin: 0 5px -3px 0; }
+    .header .nav ul .login a {
+      font: normal 14px "微软雅黑";
+      color: #E74F4D;
+      text-decoration: none; }
+
+/* Part-1 开始体验 */
+.begin {
+  position: relative;
+  width: 1280px; }
+  .begin a {
+    display: block;
+    position: absolute;
+    width: 331px;
+    height: 65px;
+    top: 435px;
+    left: 125px;
+    background-color: #E74F4D;
+    color: #fff;
+    font: normal 30px/65px "微软雅黑";
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer; }
+
+/* Part-2 简介 */
+.description {
+  width: 1280px;
+  padding: 80px 0px;
+  box-sizing: border-box; }
+  .description ul {
+    display: flex; }
+    .description ul li {
+      flex: 1;
+      list-style: none;
+      text-align: center; }
+      .description ul li i {
+        display: block;
+        width: 42px;
+        height: 42px;
+        margin: 40px auto; }
+      .description ul li:not(:first-child) {
+        margin-left: 50px; }
+        .description ul li:not(:first-child) p {
+          padding: 0 30px;
+          border-left: 3px solid #ccc; }
+      .description ul li:nth-child(1) i {
+        background: url("img/sprit.png") no-repeat 0px 0px; }
+      .description ul li:nth-child(2) i {
+        background: url("img/sprit.png") no-repeat -42px 0px; }
+      .description ul li:nth-child(3) i {
+        background: url("img/sprit.png") no-repeat -85px 0px; }
+      .description ul li:nth-child(4) i {
+        background: url("img/sprit.png") no-repeat -125px 0px; }
+
+/* Part-3 未知新世界 */
+.unknown {
+  width: 1280px;
+  padding: 50px 0px;
+  background: #ededed; }
+  .unknown i {
+    display: block;
+    width: 92px;
+    height: 92px;
+    margin: 50px auto;
+    background: url("img/sprit.png") no-repeat 0 -83px; }
+  .unknown h3 {
+    font: normal 54px "黑体";
+    color: #a0a0a0;
+    text-align: center; }
+
+/* Part-4 查找城市 */
+.choose-city {
+  width: 1280px;
+  height: 340px;
+  text-align: center;
+  position: relative;
+  background: url("img/map.png") no-repeat; }
+  .choose-city .c-c-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 340px;
+    background: rgba(170, 52, 50, 0.2); }
+  .choose-city .c-c-title {
+    position: relative;
+    padding-top: 30px;
+    font: normal 32px "微软雅黑";
+    letter-spacing: 0.1em;
+    color: #fff; }
+  .choose-city .c-c-des {
+    position: relative;
+    margin-top: 15px;
+    font: normal 12px "微软雅黑";
+    color: #fff; }
+  .choose-city .c-c-form ul {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    list-style: none; }
+    .choose-city .c-c-form ul li {
+      position: relative;
+      margin: 0 30px; }
+      .choose-city .c-c-form ul li select {
+        width: 236px;
+        height: 36px;
+        padding: 0px 10px;
+        font-size: 12px;
+        color: #ccc; }
+        .choose-city .c-c-form ul li select option {
+          background: #e3e3e5;
+          color: #323232; }
+      .choose-city .c-c-form ul li i {
+        display: inline-block;
+        width: 19px;
+        height: 18px;
+        position: absolute;
+        right: 5px;
+        top: 8px;
+        cursor: pointer;
+        background: url("img/sprit.png") no-repeat -147px -157px; }
+      .choose-city .c-c-form ul li button {
+        width: 236px;
+        height: 36px;
+        font: normal 14px "微软雅黑";
+        color: #fff;
+        background: #BE4E48;
+        cursor: pointer;
+        border: none; }
+
+/* Part-5 城市活动 */
+.activity {
+  width: 1280px;
+  text-align: center;
+  background: #f7f7f7;
+  padding: 80px 0px; }
+  .activity ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .activity ul li {
+      margin-right: 40px; }
+      .activity ul li h3 {
+        font: normal 14px "微软雅黑"; }
+      .activity ul li p {
+        font: normal 12px "微软雅黑";
+        color: #A8A9AA; }
+      .activity ul li .activity-img {
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff; }
+        .activity ul li .activity-img i {
+          display: block;
+          width: 203px;
+          height: 311px;
+          box-sizing: border-box;
+          background: url("img/avtivity.png") no-repeat -10px -973px; }
+    .activity ul .activity-s h3 {
+      font: normal 24px "黑体"; }
+  .activity ul > li + li .activity-img i {
+    background: url("img/avtivity.png") no-repeat -10px -652px; }
+  .activity ul > li + li + li .activity-img i {
+    background: url("img/avtivity.png") no-repeat -9px -331px; }
+  .activity ul > li + li + li + li .activity-img i {
+    background: url("img/avtivity.png") no-repeat -9px -11px; }
+
+/* Part-6 新世界 */
+.new-world {
+  width: 1280px;
+  background-color: #fff;
+  text-align: center;
+  display: block; }
+  .new-world .content-wrap {
+    width: 429px;
+    text-align: center;
+    padding: 120px 0px; }
+    .new-world .content-wrap .content {
+      width: 290px;
+      margin: 0 auto; }
+      .new-world .content-wrap .content h3 {
+        font: normal 20px/30px "黑体";
+        margin-bottom: 20px; }
+        .new-world .content-wrap .content h3 span {
+          color: #E7504D; }
+      .new-world .content-wrap .content p {
+        font: normal 12px/28px "黑体";
+        color: #999;
+        text-align: left;
+        margin-bottom: 40px; }
+      .new-world .content-wrap .content a {
+        display: block;
+        margin: 0 auto;
+        width: 170px;
+        height: 45px;
+        border: 1px solid #E7504D;
+        font: normal 21px "微软雅黑";
+        line-height: 45px;
+        color: #E7504D; }
+      .new-world .content-wrap .content ul {
+        margin: 20px 0 0; }
+        .new-world .content-wrap .content ul li {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 10px;
+          border: 1px solid #999;
+          background: #999;
+          cursor: pointer; }
+        .new-world .content-wrap .content ul > li + li {
+          background: #fff;
+          margin-left: 10px; }
+
+/* Part-7 新时代 */
+.new-time {
+  display: flex;
+  width: 1280px; }
+  .new-time .item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; }
+  .new-time .first-item, .new-time .second-item {
+    background: #E74F4D;
+    color: #fff; }
+    .new-time .first-item p, .new-time .second-item p {
+      font: normal 21px/1.4em "黑体"; }
+    .new-time .first-item i, .new-time .second-item i {
+      width: 31px;
+      height: 2px;
+      background: #fff;
+      margin: 20px 0; }
+    .new-time .first-item a, .new-time .second-item a {
+      display: block;
+      width: 170px;
+      height: 45px;
+      border: 1px solid #fff;
+      font: normal 21px "微软雅黑";
+      line-height: 45px;
+      text-align: center; }
+  .new-time .second-item {
+    background-color: #fff; }
+    .new-time .second-item p {
+      color: #000; }
+    .new-time .second-item i {
+      background-color: #ccc; }
+    .new-time .second-item a {
+      color: #E74F4D;
+      border: 1px solid #E74F4D; }
+
+/* Part-8 成为志愿者 */
+.volunteer {
+  width: 1280px;
+  padding: 50px 0px; }
+  .volunteer .title {
+    text-align: center;
+    margin-bottom: 80px; }
+    .volunteer .title h3 {
+      font: normal 21px "微软雅黑";
+      margin-bottom: 10px; }
+      .volunteer .title h3 span {
+        display: inline-block;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #E7504D; }
+    .volunteer .title p {
+      font: normal 12px "微软雅黑";
+      color: #999; }
+  .volunteer .content {
+    width: 980px;
+    margin: 0 auto; }
+    .volunteer .content .caution {
+      width: 300px; }
+    .volunteer .content .caution-item {
+      margin-bottom: 20px; }
+      .volunteer .content .caution-item h3 {
+        font: normal 14px "微软雅黑";
+        color: #666;
+        text-align: left;
+        margin: 0px 0px 20px 0px; }
+      .volunteer .content .caution-item p {
+        font: normal 12px "微软雅黑";
+        color: #999; }
+      .volunteer .content .caution-item span {
+        float: right;
+        font: normal 12px "微软雅黑";
+        color: #999;
+        cursor: pointer;
+        position: relative; }
+        .volunteer .content .caution-item span i {
+          position: absolute;
+          height: 6px;
+          width: 10px;
+          top: 3px;
+          left: -18px;
+          background: url("img/sprit.png") no-repeat -129px -167px; }
+    .volunteer .content .info {
+      width: 640px; }
+      .volunteer .content .info input, .volunteer .contact .content .info form button, .contact .volunteer .content .info form button, .volunteer .contact .content form .info button, .contact .volunteer .content form .info button {
+        display: inline-block;
+        width: 287px;
+        height: 30px;
+        line-height: 30px;
+        padding: 10px;
+        border: 0;
+        margin: 0px 0px 10px 0px;
+        background-color: #EDEDEF; }
+      .volunteer .content .info input:nth-child(1), .volunteer .contact .content .info form button:nth-child(1), .contact .volunteer .content .info form button:nth-child(1), .volunteer .contact .content form .info button:nth-child(1), .contact .volunteer .content form .info button:nth-child(1),
+      .volunteer .content .info input:nth-child(3),
+      .volunteer .contact .content .info form button:nth-child(3),
+      .contact .volunteer .content .info form button:nth-child(3),
+      .volunteer .contact .content form .info button:nth-child(3),
+      .contact .volunteer .content form .info button:nth-child(3) {
+        margin: 0px 20px 0px 0px; }
+      .volunteer .content .info textarea {
+        padding: 10px 10px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100px;
+        color: #221814;
+        background: #EDEDEF;
+        border: 0;
+        overflow: hidden; }
+      .volunteer .content .info button {
+        font: normal 14px "微软雅黑";
+        color: #000;
+        width: 100%;
+        height: 41px;
+        background: #EDEDEF;
+        margin: 10px 0px 0px;
+        border: none;
+        cursor: pointer; }
+
+/* Part-9 联系我们 */
+.contact {
+  width: 1280px;
+  background: #33363f;
+  padding: 50px 0px; }
+  .contact .content {
+    color: #fff;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto; }
+    .contact .content h3 {
+      font: normal 21px/34px "黑体"; }
+    .contact .content p {
+      font: normal 12px "微软雅黑"; }
+    .contact .content form {
+      height: 41px;
+      margin: 30px 0; }
+      .contact .content form input, .contact .content form button {
+        width: 420px;
+        border: none;
+        font: normal 14px "微软雅黑"; }
+      .contact .content form button {
+        width: 80px;
+        font-size: 15px;
+        background-color: #6F7178;
+        color: #fff;
+        cursor: pointer; }
+    .contact .content .icons li {
+      display: inline-block;
+      width: 29px;
+      height: 25px;
+      margin: 0px 10px; }
+    .contact .content .icons li:nth-child(1) {
+      background: url("img/sprit.png") no-repeat -139px -97px; }
+    .contact .content .icons li:nth-child(2) {
+      background: url("img/sprit.png") no-repeat -135px -72px; }
+    .contact .content .icons li:nth-child(3) {
+      background: url("img/sprit.png") no-repeat -134px -47px; }
+    .contact .content .icons li:nth-child(4) {
+      background: url("img/sprit.png") no-repeat -139px -122px; }
+
+/* 底部 */
+.footer {
+  width: 1280px;
+  box-sizing: border-box;
+  background: #30303a;
+  color: #fff;
+  padding: 30px; }
+  .footer a {
+    text-decoration: none;
+    color: #fff; }
+
+/*# sourceMappingURL=Task-7.css.map */

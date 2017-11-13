@@ -1,0 +1,176 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: rgb(248, 248, 248);
+	overflow-x: hidden;
+}
+/* 头部 */
+header {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #91d4da;
+	color: #fff;
+}
+header a {
+	position: absolute;
+	left: 0;
+	margin-left: 10px;
+	color: #fff;
+	text-decoration: none;
+}
+header a object {
+	width: 14px;
+	height: 14px;
+	margin-right: 2px;
+}
+/* 导航 */
+nav ul {
+	display: flex;
+	justify-content: center;
+	height: 40px;
+}
+nav ul li {
+	flex: 1;
+	height: 40px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	list-style: none;
+}
+nav ul li:hover {
+	border-bottom: 3px solid #91d4da;
+}
+/* 标签 */
+.tags {
+	display: flex;
+	align-content: center;
+	background: #fff;
+}
+.tags li {
+	width: 20%;
+	margin: 15px;
+	text-align: center;
+	list-style: none;
+}
+.tags li img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+/* Tab */
+.tab {
+	display: flex;
+	justify-content: center;
+	background: #fff;
+	border-top: 1px solid #ccc;
+}
+.tab .tab-item {
+	width: 30%;
+	margin: 10px;
+	border-right: 1px solid #ccc;
+}
+.tab .tab-item:last-child {
+	border: none;
+}
+.tab .tab-item img {
+	width: 100%;
+	text-align: center;
+}
+.tab .tab-item h3 {
+	margin: 3px 0px;
+	text-align: center;
+}
+.tab .tab-item h4 {
+	text-align: center;
+	color: rgb(88, 88, 88);
+}
+/* 图片 */
+.banner {
+	width: 100%;
+	height: 200px;
+}
+/* 模块 */
+.module {
+	background: #fff;
+}
+.module .m-title {
+	padding: 10px;
+	margin: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.module .m-content {
+	display: flex;
+	padding: 10px;
+}
+.module .m-content img {
+	flex: none;
+	width: 30%;
+	height: 100%;
+}
+.module .m-content .copy {
+	flex: auto;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.module .m-content .copy p {
+	flex: auto;
+	width: 30%;
+	margin: 0px 5px 10px 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	background: rgb(248, 248, 248);
+}
+/* 文章列表 */
+.single-img-article {
+	display: flex;
+	margin: 10px 0px;
+	padding: 10px 20px;
+	background: #fff;
+}
+.single-img-article .article-content,
+.single-img-article img {
+	flex: none;
+}
+.single-img-article .article-content {
+	width: 60%;
+	position: relative;
+}
+.single-img-article .article-content h4 {
+	font-size: 18px;
+	font-weight: normal;
+	color: rgb(88, 88, 88);
+}
+.single-img-article .article-content p {
+	position: absolute;
+	bottom: 0;
+	font-size: 16px;
+	color: rgb(195, 195, 195)
+}
+.single-img-article img {
+	width: 32%;
+	height: 50%;
+	margin-right: 10px;
+}
+.multi-img-article {
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	background: #fff;
+}
+.multi-img-article h4 {
+	font-size: 18px;
+	font-weight: normal;
+	color: rgb(88, 88, 88);
+}
+.multi-img-article img {
+	width: 32%;
+	margin: 10px 0px;
+}
+.multi-img-article p {
+	font-size: 16px;
+	color: rgb(195, 195, 195)
+}

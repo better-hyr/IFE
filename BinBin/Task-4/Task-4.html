@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>任务四：基础JavaScript练习（一）</title>
+	<style type="text/css">
+		#numList li {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin: 10px;
+			background: red;
+			color: #fff;
+		}
+		#rightIn {
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+<input type="text" id="inputNum">
+<button id="leftIn">左侧入</button>
+<button id="rightIn">右侧入</button>
+<button id="leftOut">左侧出</button>
+<button id="rightOut">右侧出</button>
+<ul id="numList"></ul>
+
+<script type="text/javascript">
+
+	var inputNum = document.getElementById("inputNum");
+	var leftIn = document.getElementById("leftIn");
+	var rightIn = document.getElementById("rightIn");
+	var leftOut = document.getElementById("leftOut");
+	var rightOut = document.getElementById("rightOut");
+	var numList = document.getElementById("numList");
+
+	leftIn.onclick = function() {
+		var oli = document.createElement("li");
+		oli.innerText = inputNum.value;
+		numList.insertBefore(oli, numList.firstChild);
+	}
+	rightIn.onclick = function() {
+		var oli = document.createElement("li");
+		oli.innerText = inputNum.value;
+		numList.appendChild(oli);
+	}
+	leftOut.onclick = function() {
+		alert("删除数字：" + numList.firstChild.innerText +"！");
+    numList.removeChild(numList.firstChild);
+	}
+	rightOut.onclick = function() {
+		alert("删除数字：" + numList.lastChild.innerText +"！");
+    numList.removeChild(numList.lastChild);
+	}
+	addHandle(numList, "click", function(event) {
+		numList.removeChild(event.target);
+	});
+
+	function addHandle(element, type, handler) {
+		if (element.addEventListener) {
+			element.addEventListener(type, handler, false);
+		}
+		else if (element.attachEvent) {
+			element.attachEvent("on" + type, handler);
+		}
+		else {
+			element["on" + type] = handler;
+		}
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>任务五：基础JavaScript练习（二）</title>
+	<style type="text/css">
+		#numList li ,
+		#sortNumList li {
+			display: inline-block;
+			width: 30px;
+			margin-right: 2px;
+			background: red;
+			color: #fff;
+		}
+		#rightIn {
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+<input type="text" id="inputNum">
+<button id="leftIn">左侧入</button>
+<button id="rightIn">右侧入</button>
+<button id="leftOut">左侧出</button>
+<button id="rightOut">右侧出</button>
+<ul id="numList"></ul>
+<button id="sortBtn">排序</button>
+<ul id="sortNumList"></ul>
+
+<script type="text/javascript">
+
+	var leftIn = document.getElementById("leftIn");
+	var rightIn = document.getElementById("rightIn");
+	var leftOut = document.getElementById("leftOut");
+	var rightOut = document.getElementById("rightOut");
+	var numList = document.getElementById("numList");
+	var sortBtn = document.getElementById("sortBtn");
+	var sortNumList = document.getElementById("sortNumList");
+
+	leftIn.onclick = function() {
+		insertNum("left");
+	}
+	rightIn.onclick = function() {
+		insertNum("right");
+	}
+	leftOut.onclick = function() {
+		alert("删除数字：" + numList.firstChild.offsetHeight +"！");
+    numList.removeChild(numList.firstChild);
+	}
+	rightOut.onclick = function() {
+		alert("删除数字：" + numList.lastChild.offsetHeight +"！");
+    numList.removeChild(numList.lastChild);
+	}
+	addHandle(numList, "click", function(event) {
+		numList.removeChild(event.target);
+	});
+	sortBtn.onclick = function() {
+		var list = numList.childNodes;
+		var arr = [];
+		for (let i = 0, len = list.length; i < len; i++) {
+			arr.push(list[i].offsetHeight);
+		}
+		var sortArr = arr.sort(function(a, b) {
+			return a - b;
+		});
+		console.log(sortArr);
+
+		for (let i = 0, len = sortArr.length; i < len; i++) {
+			var sli = document.createElement("li");
+			sli.style.height = sortArr[i] + "px";
+			sortNumList.appendChild(sli);
+		}
+
+	}
+
+	function addHandle(element, type, handler) {
+		if (element.addEventListener) {
+			element.addEventListener(type, handler, false);
+		}
+		else if (element.attachEvent) {
+			element.attachEvent("on" + type, handler);
+		}
+		else {
+			element["on" + type] = handler;
+		}
+	}
+	function insertNum(direction) {
+		var inputNum = document.getElementById("inputNum");
+		var inputNumValue = parseInt(inputNum.value);
+		if (numList.childNodes.length <= 60) {
+			if (!inputNumValue || inputNumValue < 10 || inputNumValue > 100) {
+				alert("请输入10-100之间的数字");
+			}
+			else {
+				var oli = document.createElement("li");
+				// oli.innerText = inputNumValue;
+				if (direction === "left") {
+					numList.insertBefore(oli, numList.firstChild);
+				}
+				else {
+					numList.appendChild(oli);
+				}
+				oli.style.height = inputNumValue + "px";
+			}
+		}
+		else {
+			alert("您输入的数量已到达上限60!");
+		}
+	}
+</script>
+</body>
+</html>

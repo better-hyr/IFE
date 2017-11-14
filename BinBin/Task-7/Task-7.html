@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务七：JavaScript和树（一）</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	#root {
+		float: left;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: center;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+		width: 800px;
+		height: 300px;
+		border: 3px solid #000;
+		border-radius: 4px;
+	}
+	div[class^="node"] {
+		float: left;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: center;
+		width: 45%;
+		height: 80%;
+		border: 3px solid #000;
+		border-radius: 4px;
+	}
+	.btns {
+		float: left;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+		clear: both;
+		margin-top: 20px;
+	}
+	.btns button {
+		border: 3px solid #000;
+		border-radius: 4px;
+		margin: 0px 10px;
+		padding: 5px 10px;
+		background: rgb(252, 177, 170);
+	}
+	</style>
+</head>
+<body>
+<div class="node-0" id="root">
+	<div class="node-1">
+		<div class="node-2">
+			<div class="node-3"></div>
+			<div class="node-3"></div>
+		</div>
+		<div class="node-2">
+			<div class="node-3"></div>
+			<div class="node-3"></div>
+		</div>
+	</div>
+	<div class="node-1">
+		<div class="node-2">
+			<div class="node-3"></div>
+			<div class="node-3"></div>
+		</div>
+		<div class="node-2">
+			<div class="node-3"></div>
+			<div class="node-3"></div>
+		</div>
+	</div>
+</div>
+<div class="btns">
+	<button id="preOrderBtn">前序遍历</button>
+	<button id="inOrderBtn">中序遍历</button>
+	<button id="postOrderBtn">后序遍历</button>
+</div>
+
+<script type="text/javascript">
+	var rootNode = document.getElementById("root");
+	var preOrderBtn = document.getElementById("preOrderBtn");
+	var inOrderBtn = document.getElementById("inOrderBtn");
+	var postOrderBtn = document.getElementById("postOrderBtn");
+	var orderNodes = [];
+	var timer;
+	// 事件绑定
+	window.onload = function() {
+		preOrderBtn.onclick = function() {
+			reset();
+			preOrder(rootNode);
+			showNodes();
+		}
+		inOrderBtn.onclick = function() {
+			reset();
+			inOrder(rootNode);
+			showNodes();
+		}
+		postOrderBtn.onclick = function() {
+			reset();
+			postOrder(rootNode);
+			showNodes();
+		}
+	}
+	// 前序遍历
+	function preOrder(node) {
+		if (node) {
+			orderNodes.push(node);
+			preOrder(node.firstElementChild);
+			preOrder(node.lastElementChild);
+		}
+	}
+	// 中序遍历
+	function inOrder(node) {
+		if (node) {
+			inOrder(node.firstElementChild);
+			orderNodes.push(node);
+			inOrder(node.lastElementChild);
+		}
+	}
+	// 后序遍历
+	function postOrder(node) {
+		if (node) {
+			postOrder(node.firstElementChild);
+			postOrder(node.lastElementChild);
+			orderNodes.push(node);
+		}
+	}
+	// 遍历显示
+	function showNodes() {
+		var i = 0;
+		var len = orderNodes.length;
+		orderNodes[0].style.background = "rgb(252, 177, 170)";
+		timer = setInterval(function() {
+			i++;
+			if (i < len) {
+				orderNodes[i-1].style.background = "#fff";
+				orderNodes[i].style.background = "rgb(252, 177, 170)";
+			}
+			else {  // 结束
+				reset();
+			}
+		}, 500);
+	}
+	// 重置
+	function reset() {
+		clearInterval(timer);
+		orderNodes.length = 0;
+		var divs= document.querySelectorAll("div[class^='node']");
+      for (let i = 0; i < divs.length; i++){
+        divs[i].style.backgroundColor="#fff";
+    }
+	}
+</script>
+</body>
+</html>

@@ -26,3 +26,13 @@
 7. 任务七：JavaScript和树（一）  [课程要求](http://ife.baidu.com/course/detail/id/108) [代码](https://github.com/better-hyr/IFE/tree/master/BinBin/Task-7) [效果](https://better-hyr.github.io/IFE/BinBin/Task-7/Task-7.html)
 8. 任务八：JavaScript和树（二）  [课程要求](http://ife.baidu.com/course/detail/id/110) [代码](https://github.com/better-hyr/IFE/tree/master/BinBin/Task-8) [效果](https://better-hyr.github.io/IFE/BinBin/Task-8/Task-8.html)
 9. 任务九：JavaScript和树（三）  [课程要求](http://ife.baidu.com/course/detail/id/111) [代码](https://github.com/better-hyr/IFE/tree/master/BinBin/Task-9) [效果](https://better-hyr.github.io/IFE/BinBin/Task-9/Task-9.html)
+
+### 耀耀学院 [学院地址](http://ife.baidu.com/college/detail/id/11)
+
+1. 任务一：表单（一）单个表单相的检验 [课程要求](http://ife.baidu.com/course/detail/id/97) [代码](https://github.com/better-hyr/IFE/tree/master/YaoYao/Task-1) [效果](https://better-hyr.github.io/IFE/YaoYao/Task-1/Task-1.html)
+2. 任务二：表单（二）多个表单项的动态校验 [课程要求](http://ife.baidu.com/course/detail/id/101) [代码](https://github.com/better-hyr/IFE/tree/master/YaoYao/Task-2) [效果](https://better-hyr.github.io/IFE/YaoYao/Task-2/Task-2.html)
+3. 任务三：表单（三）联动 [课程要求](http://ife.baidu.com/course/detail/id/106) [代码](https://github.com/better-hyr/IFE/tree/master/YaoYao/Task-3) [效果](https://better-hyr.github.io/IFE/YaoYao/Task-3/Task-3.html)
+4. 任务四：听指令的小方块（一） [课程要求](http://ife.baidu.com/course/detail/id/109) 
+5. 任务五：听指令的小方块（二） [课程要求](http://ife.baidu.com/course/detail/id/112)
+6. 任务六：UI组件之浮出层 [课程要求](http://ife.baidu.com/course/detail/id/115) [代码](https://github.com/better-hyr/IFE/tree/master/YaoYao/Task-6) [效果](https://better-hyr.github.io/IFE/YaoYao/Task-6/Task-6.html)
+7. 任务七：UI组件之排序表格 [课程要求](http://ife.baidu.com/course/detail/id/118) [代码](https://github.com/better-hyr/IFE/tree/master/YaoYao/Task-7) [效果](https://better-hyr.github.io/IFE/YaoYao/Task-7/Task-7.html)

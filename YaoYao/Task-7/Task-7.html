@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务七：UI组件之排序表格</title>
+	<style type="text/css">
+		#table {
+			border-collapse: collapse;
+			border: 1px solid #fff;
+		}
+		#table th, 
+		#table td {
+			width: 120px;
+			height: 40px;
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+		#table thead {
+			background-color: #3c3c3c;
+			color: #fff;
+		}
+		.upBtn {
+			position: relative;
+			left: 10px;
+			top: -10px;
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-bottom:10px solid #fff;
+			border-top: 10px solid transparent;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+		}
+		.downBtn {
+			position: relative;
+			left: -10px;
+			bottom: -14px;
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-top:10px solid #fff;
+			border-bottom: 10px solid transparent;
+			border-left:10px solid transparent;
+			border-right:10px solid transparent;
+		}
+	</style>
+</head>
+<body>
+<table id="table"></table>
+<script type="text/javascript">
+	// 表头数据
+	var heads = [
+		{
+			name: 'name',
+			label: '姓名',
+			sortable: false
+		},
+		{
+			name: 'chinese',
+			label: '语文',
+			sortable: true
+		}, 
+		{
+			name: 'math',
+			label: '数学',
+			sortable: true
+		}, 
+		{
+			name: 'english',
+			label: '英语',
+			sortable: true
+		}, 
+		{
+			name: 'total',
+			label: '总分',
+			sortable: true
+		}
+	];
+	// 表格数据
+	var datas = [
+		{
+			name: '小明',
+			chinese: 90,
+			math: 100,
+			english: 70,
+			total: 260
+		},
+		{
+			name: '小红',
+			chinese: 90,
+			math: 70,
+			english: 80,
+			total: 240
+		},
+		{
+			name: '小亮',
+			chinese: 70,
+			math: 90,
+			english: 70,
+			total: 230
+		},
+		{
+			name: '小悠',
+			chinese: 99,
+			math: 100,
+			english: 98,
+			total: 297
+		},
+		{
+			name: '小然',
+			chinese: 100,
+			math: 90,
+			english: 90,
+			total: 280
+		}
+	];
+	var table = document.getElementById("table");
+	init();
+	function init() {
+		addThead();
+		addTbody();
+	}
+	// 生成表头thead
+	function addThead() {
+	  // 生成表头thead
+  	  var tHead = document.createElement("thead");
+	  // 生成表头行tr
+	  var trNode = addTr();
+      //生成表头单元格
+      heads.forEach(function (head) {
+    	var ths = addTh(head.label);
+    	if (head.sortable) {
+    	  var val = head.name;
+       	  // 升序按钮
+       	  var upBtn = document.createElement('span');
+          upBtn.className = 'upBtn';
+          ths.appendChild(upBtn);
+          upBtn.onclick = function () {
+          	upSort(val);
+          };
+          // 降序按钮
+          var downBtn = document.createElement('span');
+          downBtn.className = 'downBtn';
+          ths.appendChild(downBtn);
+          downBtn.onclick = function () {
+          	downSort(val);
+          };
+        }
+        trNode.appendChild(ths);
+      });
+      tHead.appendChild(trNode);
+      table.appendChild(tHead);
+  	}
+  	// 生成表格主体tbody
+  	function addTbody() {
+  		var tBody = document.createElement("tbody");
+  		for (let i = 0, len = datas.length; i < len; i++) {
+  			var trNode = addTr();
+  			for (let key in datas[i]) {
+  				var tds = addTd(datas[i][key]);
+  				trNode.appendChild(tds);
+  			}
+  			tBody.appendChild(trNode);
+  		}
+  		table.appendChild(tBody);
+  	}
+    // 生成行tr
+    function addTr() {
+      var trNode = document.createElement("tr");
+      return trNode;
+    }
+    // 生成表头单元格th
+    function addTh(value) {
+  	  var thNode = document.createElement("th");
+  	  thNode.innerText = value;
+  	  return thNode;
+    }
+    // 生成表格单元格td
+    function addTd(value) {
+      var tdNode = document.createElement('td');
+      tdNode.innerText = value;
+      return tdNode;
+    }
+    // 升序
+    function upSort(value) {
+    	datas.sort(function(a, b) {
+    		return a[value] - b[value];
+    	});
+    	table.innerHTML = "";
+    	init();  // 重绘
+    }
+    // 降序
+    function downSort(value) {
+    	datas.sort(function(a, b) {
+    		return b[value] - a[value];
+    	});
+    	table.innerHTML = "";
+    	init();  // 重绘
+    }
+</script>
+</body>
+</html>

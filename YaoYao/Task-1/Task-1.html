@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务一：表单（一）单个表单相的检验</title>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		form{
+			width: 600px;
+		}
+		.item {
+			margin: 20px 0px;
+		}
+		label {
+			display: inline-block;
+			width: 100px;
+			padding-right: 20px;
+			box-sizing: border-box;
+			text-align: right;
+		}
+		.hint {
+			margin: 3px 0 0 100px;
+			font-size: 12px;
+			color: #ccc;
+		}
+		input {
+			width: 300px;
+			padding: 3px;
+			box-sizing: border-box;
+			font-size: 14px;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+		}
+		button {
+			width: 60px;
+			height: 28px;
+			margin-left: 10px;
+			line-height: 28px;
+			text-align: center;
+			color: #fff;
+			background-color: #317ef3;
+			border: 1px solid #317ef3;
+			border-radius: 3px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="item">
+		<label for="inputValue">名称</label><input type="text" id="inputBox">
+		<button id="verifyBtn">验证</button>
+		<p id="verifyResult" class="hint"></p>
+	</div>
+	<script type="text/javascript">
+		var verifyBtn = document.getElementById('verifyBtn');
+		var inputBox = document.getElementById('inputBox');
+		var verifyResult = document.getElementById('verifyResult');
+		init();
+		function init() {
+			verifyResult.innerText = "必填，长度为4~16个字符";
+			verifyBtn.addEventListener("click", verify);
+		}
+		function verify() {
+			
+			var toVerifyText = inputBox.value;
+			var textLen = getLength(toVerifyText);
+
+			if (textLen == 0) {
+				verifyResult.innerText = "姓名不能为空";
+				verifyResult.style.color = "red";
+				inputBox.style.border="1px solid red";
+			}
+			else if (textLen >= 4 && textLen <= 16) {
+				verifyResult.innerText = "名称格式正确" ;
+				verifyResult.style.color = "green";
+				inputBox.style.border="1px solid green";
+			}
+			else {
+				verifyResult.innerText = "长度必须大于4且小于16";
+				verifyResult.style.color = "red";
+				inputBox.style.border="1px solid red";
+			}
+		}
+		function getLength(value) {
+			var length = 0;
+			for (let i = 0, len = value.length; i < len; i++) {
+				if (value[i].charCodeAt() > 255 || value[i].charCodeAt() < 0) {
+					length += 2;
+				}
+				else {
+					length++;
+				}
+			}
+			return length;
+		}
+		
+	</script>
+</body>
+</html>

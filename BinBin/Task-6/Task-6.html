@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>任务六：基础JavaScript练习（三）</title>
+	<style type="text/css">
+		#valueList li {
+			display: inline-block;
+			min-width: 40px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin: 10px;
+			background: red;
+			color: #fff;
+		}
+		#rightIn {
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+<textarea id="inputValues" cols="30" rows="5"></textarea>
+<button id="leftIn">左侧入</button>
+<button id="rightIn">右侧入</button>
+<button id="leftOut">左侧出</button>
+<button id="rightOut">右侧出</button>
+<input type="text" name="searchValue" id="searchValue">
+<button id="searchBtn">搜索</button>
+<ul id="valueList"></ul>
+
+<script type="text/javascript">
+
+	var inputValues = document.getElementById("inputValues");
+	var leftIn = document.getElementById("leftIn");
+	var rightIn = document.getElementById("rightIn");
+	var leftOut = document.getElementById("leftOut");
+	var rightOut = document.getElementById("rightOut");
+	var searchBtn = document.getElementById("searchBtn");
+	var valueList = document.getElementById("valueList");
+
+	init();
+
+	function init() {
+		leftIn.onclick = insertInLeft;
+		rightIn.onclick = insertInRight;
+		leftOut.onclick = function() {
+			alert("删除元素：" + valueList.firstChild.innerText +"！");
+			valueList.removeChild(valueList.firstChild);
+		}
+		rightOut.onclick = function() {
+			alert("删除元素：" + valueList.lastChild.innerText +"！");
+			valueList.removeChild(valueList.lastChild);
+		}
+		searchBtn.onclick = search;
+	}
+
+	function insertInLeft() {
+		var seg = /[,，.。、\s\n]/;
+		var itemArr = inputValues.value.split(seg);
+		for (var i = 0, len = itemArr.length; i < len; i++) {
+			var liNode = document.createElement("li");
+			liNode.innerText = itemArr[i];
+			valueList.insertBefore(liNode, valueList.firstChild);
+		}
+	}
+
+	function insertInRight() {
+		var seg = /[,，.。、\s\n]/;
+		var itemArr = inputValues.value.split(seg);
+		for (var i = 0, len = itemArr.length; i < len; i++) {
+			var liNode = document.createElement("li");
+			liNode.innerText = itemArr[i];
+			valueList.appendChild(liNode);
+		}
+	}
+
+	function search() {
+		var searchValue = document.getElementById("searchValue").value;
+		var reg = RegExp(eval('/'+searchValue+'/'));
+		var list = valueList.getElementsByTagName("li");
+		for (var i = 0, len = list.length; i < len; i++) {
+			if (reg.test(list[i].innerText)) {
+				list[i].style.color = "#000";
+			}
+		}
+	}
+
+	// 点击删除
+	addHandle(valueList, "click", function(event) {
+		valueList.removeChild(event.target);
+	});
+
+	function addHandle(element, type, handler) {
+		if (element.addEventListener) {
+			element.addEventListener(type, handler, false);
+		}
+		else if (element.attachEvent) {
+			element.attachEvent("on" + type, handler);
+		}
+		else {
+			element["on" + type] = handler;
+		}
+	}
+	
+</script>
+</body>
+</html>

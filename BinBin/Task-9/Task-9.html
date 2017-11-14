@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务九  JavaScript和树（三）</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	#root {
+		float: left;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: center;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+		width: 1200px;
+		height: 400px;
+		border: 3px solid #000;
+		border-radius: 4px;
+	}
+	div[class^="node"] {
+		float: left;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: center;
+		margin: 5px;
+		height: 70%;
+		border: 3px solid #000;
+		border-radius: 4px;
+	}
+	.btns {
+		float: left;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+		clear: both;
+		margin-top: 20px;
+	}
+	.btns button {
+		border: 3px solid #000;
+		border-radius: 4px;
+		margin: 0px 10px;
+		padding: 5px 10px;
+		background: rgb(252, 177, 170);
+	}
+	.btns input {
+		border: 3px solid #000;
+		border-radius: 4px;
+		margin: 0px 10px;
+		padding: 5px 10px;
+		background: rgb(252, 177, 170);
+	}
+	</style>
+</head>
+<body>
+<div class="node-0" id="root">
+	Super
+	<div class="node-1">
+		Car
+		<div class="node-2">
+			Apple
+			<div class="node-3">Pear</div>
+			<div class="node-3">Pig</div>
+			<div class="node-3">Cola</div>
+			<div class="node-3">Soccer</div>
+		</div>
+		<div class="node-2">
+			Phone
+		</div>
+		<div class="node-2">
+			<div class="node-3">Book</div>
+			<div class="node-3">School</div>
+		</div>
+	</div>
+	<div class="node-1">
+		Note
+		<div class="node-2">
+			Human
+			<div class="node-3">Code</div>
+			<div class="node-3">Operate</div>
+			<div class="node-3">Man</div>
+		</div>
+		<div class="node-2">
+			Program
+			<div class="node-3">
+				Bement
+				<div class="node-4">
+					Cat
+				</div>
+				</div>
+			<div class="node-3">Gass</div>
+		</div>
+	</div>
+	<div class="node-1">
+		Flash
+	</div>
+</div>
+<div class="btns">
+	<button id="preOrderBtn">前序遍历</button>
+	<button id="postOrderBtn">后序遍历</button>
+</div>
+
+<div class="btns">
+	<input id="searchValue" type="text" name="searchValue" placeholder="请输入需要查询的值">
+	<button id="preOrderSearchBtn">前序遍历查询</button>
+	<button id="postOrderSearchBtn">后序遍历查询</button>
+</div>
+
+<div class="btns">
+	<button id="delBtn">删除</button>
+	<input id="addValue" type="text" name="addValue" placeholder="请输入需要添加的值">
+	<button id="addBtn">添加</button>
+</div>
+
+<script type="text/javascript">
+	var rootNode = document.getElementById("root");
+	var preOrderBtn = document.getElementById("preOrderBtn");
+	var postOrderBtn = document.getElementById("postOrderBtn");
+	var preOrderSearchBtn = document.getElementById("preOrderSearchBtn");
+	var postOrderSearchBtn = document.getElementById("postOrderSearchBtn");
+	var delBtn = document.getElementById("delBtn");
+	var addBtn = document.getElementById("addBtn");
+	var orderNodes = [];
+	var resultNodes = [];
+	var timer;
+	var allNodes = document.querySelectorAll("div[class^='node']");
+	// 事件绑定
+	window.onload = function() {
+		preOrderBtn.onclick = function() {
+			reset();
+			preOrder(rootNode);
+			showNodes();
+		}
+		postOrderBtn.onclick = function() {
+			reset();
+			postOrder(rootNode);
+			showNodes();
+		}
+		preOrderSearchBtn.onclick = function() {
+			reset();
+			preOrderSearch(rootNode);
+			showResult();
+		}
+		postOrderSearchBtn.onclick = function() {
+			reset();
+			postOrderSearch(rootNode);
+			showResult();
+		}
+	}
+	// 前序遍历
+	function preOrder(node) {
+		if (node) {
+			orderNodes.push(node);
+			for (let i = 0, len = node.childElementCount; i < len; i++) {
+				if (node.children[i] != null) {
+					preOrder(node.children[i])
+				}
+			}
+		}
+	}
+	// 后序遍历
+	function postOrder(node) {
+		if (node) {
+			for (let i = 0, len = node.childElementCount; i < len; i++) {
+				if (node.children[i] != null) {
+					preOrder(node.children[i])
+				}
+			}
+			orderNodes.push(node);
+		}
+	}
+	// 遍历显示
+	function showNodes() {
+		var i = 0;
+		var len = orderNodes.length;
+		orderNodes[0].style.background = "rgb(252, 177, 170)";
+		timer = setInterval(function() {
+			i++;
+			if (i < len) {
+				orderNodes[i-1].style.background = "#fff";
+				orderNodes[i].style.background = "rgb(252, 177, 170)";
+			}
+			else {  // 结束
+				reset();
+			}
+		}, 500);
+		showResult();
+	}
+	// 重置
+	function reset() {
+		clearInterval(timer);
+		orderNodes.length = 0;
+		resultNodes.length = 0;
+		var divs= document.querySelectorAll("div[class^='node']");
+      for(let i = 0; i < divs.length; i++){
+        divs[i].style.backgroundColor="#fff";
+    }
+	}
+	// 前序查询
+	function preOrderSearch(node) {
+		var searchValue = document.getElementById("searchValue").value;
+		if (node) {
+			if (node.firstChild.nodeValue.indexOf(searchValue) > -1) {
+				resultNodes.push(node);
+			}
+			orderNodes.push(node);
+			for (let i = 0, len = node.childElementCount; i < len; i++) {
+				if (node.children[i] != null) {
+					preOrderSearch(node.children[i])
+				}
+			}
+		}
+	}
+	// 后序查询
+	function postOrderSearch(node) {
+		var searchValue = document.getElementById("searchValue").value;
+		if (node) {
+			if (node.firstChild.nodeValue.indexOf(searchValue) > -1) {
+				resultNodes.push(node);
+			}
+			orderNodes.push(node);
+			for (let i = 0, len = node.childElementCount; i < len; i++) {
+				if (node.children[i] != null) {
+					postOrderSearch(node.children[i])
+				}
+			}
+		}
+	}
+	// 显示查询结果
+	function showResult() {
+		for (let i = 0, len = resultNodes.length; i < len; i++) {
+			resultNodes[i].style.background = "rgb(252, 177, 170)";
+		}
+		if (resultNodes.length === 0) {
+			alert("未找到该节点");
+		}
+		else {
+			alert("已找到该节点");
+		}
+	}
+	// 选中
+	for (let i = 0, len = allNodes.length; i < len; i++) {
+		allNodes[i].onclick = function(event) {
+			for (var j = 0; j < len; j++) {
+				if (allNodes[j].style.background == "rgb(252, 177, 170)") {
+					allNodes[j].style.background = "#fff";
+				}
+			}
+			event.target.style.background = "rgb(252, 177, 170)";
+			event.stopPropagation();
+			delBtn.onclick = function() { 
+				delNode(event.target); 
+			};
+			addBtn.onclick = function() {
+				addNode(event.target);
+			}
+		}
+	}
+	// 删除
+	function delNode(node) {
+		node.parentNode.removeChild(node);
+	}
+	// 添加
+	function addNode(node) {
+		var addValue = document.getElementById("addValue").value;
+		if (addValue == "") {
+			alert("请输入需要添加的值");
+      return false;
+		}
+		else {
+			var newNode = document.createElement("div");
+			newNode.innerText = addValue;
+			newNode.className = "node";
+			node.appendChild(newNode);
+		}
+	}
+</script>
+</body>
+</html>

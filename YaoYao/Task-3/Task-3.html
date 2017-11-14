@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务三：表单（三）联动</title>
+	<style type="text/css">
+		div {
+			margin: 20px 0px;
+		}
+		select {
+			height: 22px; 
+			line-height: 22px; 
+			padding: 2px 0px;
+		}
+		label {
+			margin-right: 5px;
+		}
+		#city {
+			width: 100px;
+		}
+		#school {
+			width: 200px;
+		}
+		#schoolContainer {
+			display: none;
+		}
+		#companyContainer {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<form>
+	<div class="radios">
+		<input type="radio" name="curStudent" id="curStudent"><label for="curStudent">在校生</label>
+		<input type="radio" name="curStudent" id="nonCurStudent"><label for="nonCurStudent">非在校生</label>
+	</div>
+	<div id="schoolContainer">
+		<label for="city">学校</label>
+		<select id="city">
+			<option value="北京">北京</option>
+			<option value="上海">上海</option>
+			<option value="武汉">武汉</option>
+			<option value="广州">广州</option>
+		</select>
+		<select id="school"><option></option></select>
+	</div>
+	<div id="companyContainer">
+		<label for="company">就业单位</label>
+		<input type="text" name="company" id="company">
+	</div>
+</form>
+<script type="text/javascript">
+	var curStudent = document.getElementById("curStudent");
+	var nonCurStudent = document.getElementById("nonCurStudent");
+	var schoolContainer = document.getElementById("schoolContainer");
+	var companyContainer = document.getElementById("companyContainer");
+	var city = document.getElementById("city");
+	var school = document.getElementById("school");
+
+	var schoolList = {
+		"北京": ["北京大学", "清华大学", "北京邮电大学"],
+		"上海": ["复旦大学", "上海交通大学"],
+		"武汉": ["武汉大学", "华中科技大学", "武汉理工大学"],
+		"广州": ["中山大学", "华南理工大学"]
+	};
+	window.onload = function() {
+		curStudent.onclick = function() {
+			schoolContainer.style.display = "block";
+			companyContainer.style.display = "none";
+		}
+		nonCurStudent.onclick = function() {
+			schoolContainer.style.display = "none";
+			companyContainer.style.display = "block";
+		}
+		city.onchange = function() {
+			changeSchoolList(city, school);
+		};
+		changeSchoolList(city, school);
+	}
+	
+	function changeSchoolList(city, school) {
+		var cityIndex = city.selectedIndex;
+		var cityValue = city.options[cityIndex].value;
+		school.innerHTML = "";
+		schoolList[cityValue].forEach(function(item) {
+			var option = document.createElement("option");
+			option.value = item;
+			option.text = item;
+			school.appendChild(option);
+		});
+	}
+</script>
+</body>
+</html>
